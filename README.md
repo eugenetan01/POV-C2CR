@@ -12,7 +12,9 @@
 
 This proof shows how you can achieve a stressed exit from one MongoDB cluster to another by achieving an active-passive multi cluster DR strategy.
 
-For this proof, an Atlas cluster will be loaded with [sample data](https://docs.atlas.mongodb.com/sample-data/). The **accounts** and **transactions** collection in the **sample_analytics** database will be written to by the application to simulate a live replication of data from the source to target cluster. This proof shows that data can be migrated and kept in realtime sync between source and target Atlas clusters as part of the cluster to cluster sync as part of a DR strategy. This proof also showcases you can also run a filtered sync to only sync a subset of collections ( **transactions** ) to the target cluster.
+For this proof, an Atlas cluster will be loaded with [sample data](https://docs.atlas.mongodb.com/sample-data/). The **accounts** and **transactions** collection in the **sample_analytics** database on the source cluster will be written to by the application to simulate a live replication of data from the source to target cluster.
+
+This proof shows that data can be migrated and kept in realtime sync between source and target Atlas clusters as part of the cluster to cluster sync as part of a DR strategy. This proof also showcases you can also run a filtered sync to only sync a subset of collections ( **transactions** ) to the target cluster.
 
 ---
 
