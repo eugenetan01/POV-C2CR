@@ -32,9 +32,13 @@ For this proof, an Atlas cluster will be loaded with [sample data](https://docs.
 
 - Load sample data set with the Atlas UI and verify that the data is loaded in the Atlas Data Explorer
 
-\_\_3. Install mongosync via the [Download Center](https://www.mongodb.com/docs/cluster-to-cluster-sync/current/installation/) and choose the correct OS your local machine runs on
+**3. Install mongosync**
 
-\_\_4. Once mongosync is installed, run mongosync with this command:
+- Install via the [Download Center](https://www.mongodb.com/docs/cluster-to-cluster-sync/current/installation/) and choose the correct OS your local machine runs on
+
+**4. Run Mongosync**
+
+- Once mongosync is installed, run mongosync with this command:
 
 ```bash
 mongosync \
@@ -42,7 +46,9 @@ mongosync \
   --cluster1 'mongodb+srv://ADMIN:<password>@<demo-gcp cluster connection string>/'
 ```
 
-\_\_5. Ensure mongosync is running at localhost:27182. It should have a message like so:
+**5. Ensure mongosync is running at localhost:27182**
+
+- Mongosync in the CLI should have a message like so:
 
 ```bash
 {"level": "info", ... , "message": "running webserver"}
@@ -87,7 +93,8 @@ mongosync \
 **3. Ensure all documents are replicated from DEMO-AWS cluster to DEMO-GCP cluster**
 
 - In the **Atlas Data Explorer** tab, check that the number of documents in DEMO-AWS cluster for both the accounts and transactions collections are the same in the DEMO-GCP cluster in both the sample_analytics.accounts and transactions collection.
-  ![success](img/success-migrate.png)
+
+![success](img/success-migrate.png)
 
 **4. Find {account_id: 371138} on “DEMO-GCP” cluster**
 
@@ -96,12 +103,15 @@ mongosync \
   ![success](img/success-replication-transactions.png)
 
 **4. Run app-insert script in the root folder that connects to “DEMO-AWS” cluster**
+
 ![success](img/app-insert.png)
 
 **4. Take the first account id and transaction id inserted and verify it exists in “DEMO-AWS” cluster in both the sample_analytics.accounts / sample_analytics.transactions collections**
+
 ![success](img/app-insert-aws-accounts.png)
 ![success](img/app-insert-aws-transactions.png)
 
 **5. Verify that the same document ids for sample_analytics.accounts and sample_analytics.transactions were replicated to “DEMO-GCP” cluster**
+
 ![success](img/app-insert-gcp-accounts.png)
 ![success](img/app-insert-gcp-transactions.png)
